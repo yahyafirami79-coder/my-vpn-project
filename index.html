@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ghost Proxy</title>
+    <style>
+        body { background: #0f172a; color: white; font-family: sans-serif; text-align: center; padding-top: 100px; }
+        .container { background: #1e293b; padding: 40px; border-radius: 20px; display: inline-block; border: 1px solid #334155; }
+        input { padding: 15px; width: 400px; border-radius: 10px; border: none; font-size: 16px; margin-bottom: 20px; }
+        button { padding: 15px 30px; background: #38bdf8; color: #0f172a; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌐 Ghost Proxy Website</h1>
+        <p>Enter any URL to browse anonymously:</p>
+        <input type="text" id="urlInput" placeholder="https://google.com"><br>
+        <button onclick="launch()">Start Browsing</button>
+    </div>
+    <script>
+        function launch() {
+            const val = document.getElementById('urlInput').value;
+            if(!val) return alert("Enter a URL!");
+            window.location.href = `/proxy?url=${encodeURIComponent(val)}`;
+        }
+    </script>
+</body>
+</html>
